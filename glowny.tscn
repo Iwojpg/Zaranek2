@@ -1,0 +1,490 @@
+[gd_scene load_steps=23 format=3 uid="uid://bw7ek6ksowbun"]
+
+[ext_resource type="Script" path="res://glowny.gd" id="1_qoh3t"]
+[ext_resource type="Texture2D" uid="uid://cwxi67ouyx7qp" path="res://icon.svg" id="1_vdc84"]
+[ext_resource type="Texture2D" uid="uid://b4ug4xaodi5fw" path="res://startscreen.jpg" id="2_avis4"]
+[ext_resource type="Texture2D" uid="uid://ba1la7rob7fie" path="res://Góry.jpg" id="2_nqf23"]
+[ext_resource type="Script" path="res://Kształty.gd" id="2_rcbme"]
+[ext_resource type="Texture2D" uid="uid://c6e2ns2b1qpyl" path="res://wood.png" id="4_tct3d"]
+[ext_resource type="Script" path="res://Slime.gd" id="5_wnfie"]
+[ext_resource type="Texture2D" uid="uid://dw2pphseoe0o7" path="res://Hoi4-logo.png" id="6_ef5h3"]
+[ext_resource type="Texture2D" uid="uid://c02gbn2h1ovop" path="res://sprenzynka.png" id="7_2up0c"]
+[ext_resource type="Texture2D" uid="uid://bnhhdnrqomlwn" path="res://pexels-jonathanborba-36299688.jpg" id="8_j1xq7"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5ej5f"]
+friction = 0.8
+bounce = 0.01
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qrsqj"]
+size = Vector2(127, 127)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bb3m4"]
+size = Vector2(134, 134)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h08xe"]
+friction = 0.8
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m07cy"]
+size = Vector2(1247.5, 92.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ff61"]
+size = Vector2(34, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kq8xa"]
+size = Vector2(303, 1253)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0sfiv"]
+size = Vector2(89, 4803)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h07g2"]
+size = Vector2(359, 1263)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_afo6e"]
+size = Vector2(366, 1256)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v73jc"]
+size = Vector2(8729.25, 1466.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtcqu"]
+size = Vector2(2915, 8028)
+
+[node name="Glowny" type="Node2D"]
+script = ExtResource("1_qoh3t")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(33, -6145)
+scale = Vector2(3.23086, 4.44811)
+texture = ExtResource("2_avis4")
+
+[node name="powrót" type="Button" parent="."]
+offset_left = 7152.0
+offset_top = 2547.0
+offset_right = 7216.0
+offset_bottom = 2578.0
+scale = Vector2(1.79797, 1.33723)
+text = "powrót"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1058.0
+offset_top = -6219.0
+offset_right = 1166.0
+offset_bottom = -6136.0
+scale = Vector2(1.6091, 1.84037)
+text = "mapa nr. 1"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 1058.0
+offset_top = -5986.0
+offset_right = 1169.0
+offset_bottom = -5905.0
+scale = Vector2(1.6212, 1.99924)
+text = "mapa nr. 2"
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 1061.0
+offset_top = -5752.0
+offset_right = 1168.0
+offset_bottom = -5669.0
+scale = Vector2(1.64905, 2.05336)
+text = "mapa nr. 3"
+
+[node name="Button4" type="Button" parent="."]
+offset_left = 1060.0
+offset_top = -5511.0
+offset_right = 1167.0
+offset_bottom = -5427.0
+scale = Vector2(1.71425, 2.09247)
+text = " mapa nr. 4"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(4956, 3319)
+scale = Vector2(3.03547, 6.15774)
+texture = ExtResource("2_nqf23")
+
+[node name="Ksztalty" type="RigidBody2D" parent="."]
+position = Vector2(300, 2889)
+collision_mask = 14
+physics_material_override = SubResource("PhysicsMaterial_5ej5f")
+freeze = true
+freeze_mode = 1
+linear_damp = 0.25
+angular_damp = 1.25
+script = ExtResource("2_rcbme")
+
+[node name="Kolizja1" type="CollisionShape2D" parent="Ksztalty"]
+shape = SubResource("RectangleShape2D_qrsqj")
+
+[node name="Grafika1" type="Sprite2D" parent="Ksztalty"]
+position = Vector2(2.71201e-06, -0.499953)
+scale = Vector2(0.351852, 0.349537)
+texture = ExtResource("4_tct3d")
+
+[node name="Camera2D" type="Camera2D" parent="Ksztalty"]
+
+[node name="Area2D" type="Area2D" parent="Ksztalty"]
+collision_layer = 16
+collision_mask = 4
+
+[node name="Doklejanie" type="CollisionShape2D" parent="Ksztalty/Area2D"]
+shape = SubResource("RectangleShape2D_bb3m4")
+
+[node name="Podloga" type="StaticBody2D" parent="." groups=["Podloga"]]
+collision_layer = 2
+collision_mask = 4
+physics_material_override = SubResource("PhysicsMaterial_h08xe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Podloga" groups=["Podloga"]]
+position = Vector2(347.25, 4980)
+shape = SubResource("RectangleShape2D_m07cy")
+
+[node name="Sprite2D" type="Sprite2D" parent="Podloga/CollisionShape2D" groups=["Podloga"]]
+position = Vector2(-5.12602, 2.25)
+scale = Vector2(0.39916, 0.0194161)
+texture = ExtResource("8_j1xq7")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Ilosc_slimow" type="Label" parent="CanvasLayer"]
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 56.0
+offset_bottom = 38.0
+
+[node name="Wysokosc" type="Label" parent="CanvasLayer/Ilosc_slimow"]
+layout_mode = 0
+offset_top = 25.0
+offset_right = 40.0
+offset_bottom = 51.0
+
+[node name="Slime" type="Area2D" parent="."]
+position = Vector2(171, 86)
+collision_layer = 4
+collision_mask = 22
+script = ExtResource("5_wnfie")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slime"]
+shape = SubResource("RectangleShape2D_1ff61")
+
+[node name="Sprite2D" type="Sprite2D" parent="Slime"]
+position = Vector2(-1, 0)
+scale = Vector2(0.210648, 0.0810185)
+texture = ExtResource("7_2up0c")
+
+[node name="RayCast2D" type="RayCast2D" parent="Slime"]
+collision_mask = 2
+
+[node name="Lewa_Dolna" type="StaticBody2D" parent="." groups=["Podloga"]]
+position = Vector2(-65, 0)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lewa_Dolna" groups=["Podloga"]]
+position = Vector2(-90.5, 4406.5)
+shape = SubResource("RectangleShape2D_kq8xa")
+
+[node name="Sprite2D" type="Sprite2D" parent="Lewa_Dolna/CollisionShape2D"]
+position = Vector2(-3.5, -9.5)
+rotation = 1.5708
+scale = Vector2(0.404268, 0.0660818)
+texture = ExtResource("8_j1xq7")
+
+[node name="Lewa_Gorna" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lewa_Gorna"]
+position = Vector2(-45, 1377.5)
+rotation = 0.0040679
+shape = SubResource("RectangleShape2D_0sfiv")
+
+[node name="Sprite2D" type="Sprite2D" parent="Lewa_Gorna/CollisionShape2D"]
+position = Vector2(-90.6803, -44.1316)
+rotation = -1.57541
+scale = Vector2(7.92188, 1.42388)
+texture = ExtResource("6_ef5h3")
+
+[node name="Prawa_Dolna" type="StaticBody2D" parent="." groups=["Podloga"]]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Prawa_Dolna" groups=["Podloga"]]
+position = Vector2(802, 4412)
+shape = SubResource("RectangleShape2D_kq8xa")
+
+[node name="Sprite2D" type="Sprite2D" parent="Prawa_Dolna/CollisionShape2D"]
+position = Vector2(9, -11)
+rotation = 1.5708
+scale = Vector2(0.404, 0.0689806)
+texture = ExtResource("8_j1xq7")
+
+[node name="Prawa_Gorna" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Prawa_Gorna"]
+position = Vector2(700, 1377.5)
+rotation = 3.14159
+shape = SubResource("RectangleShape2D_0sfiv")
+
+[node name="Sprite2D" type="Sprite2D" parent="Prawa_Gorna/CollisionShape2D"]
+position = Vector2(-90.6803, -44.1316)
+rotation = -1.57541
+scale = Vector2(7.92188, 1.42388)
+texture = ExtResource("6_ef5h3")
+
+[node name="Slime2" type="Area2D" parent="."]
+position = Vector2(105, 54)
+collision_layer = 4
+collision_mask = 22
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slime2"]
+shape = SubResource("RectangleShape2D_1ff61")
+
+[node name="Sprite2D" type="Sprite2D" parent="Slime2"]
+position = Vector2(-1, 1)
+scale = Vector2(0.208333, 0.0810185)
+texture = ExtResource("7_2up0c")
+
+[node name="RayCast2D" type="RayCast2D" parent="Slime2"]
+collision_mask = 2
+
+[node name="Slime3" type="Area2D" parent="."]
+position = Vector2(157, 40)
+collision_layer = 4
+collision_mask = 22
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slime3"]
+shape = SubResource("RectangleShape2D_1ff61")
+
+[node name="Sprite2D" type="Sprite2D" parent="Slime3"]
+position = Vector2(-0.750009, 0.425)
+scale = Vector2(0.188657, 0.0806713)
+texture = ExtResource("7_2up0c")
+
+[node name="RayCast2D" type="RayCast2D" parent="Slime3"]
+collision_mask = 2
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D" groups=["Podloga"]]
+position = Vector2(2601, 1144)
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D2" groups=["Podloga"]]
+position = Vector2(1117, 1261)
+shape = SubResource("RectangleShape2D_h07g2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/StaticBody2D2" groups=["Podloga"]]
+position = Vector2(1116, 1259)
+scale = Vector2(-0.114495, -0.267285)
+texture = ExtResource("8_j1xq7")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Node2D"]
+position = Vector2(7871, 2155)
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D4"]
+position = Vector2(-380.375, 550.5)
+shape = SubResource("RectangleShape2D_afo6e")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/StaticBody2D4"]
+position = Vector2(-410, 558)
+rotation = 1.5708
+scale = Vector2(2.06, 1.69482)
+texture = ExtResource("6_ef5h3")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Node2D"]
+position = Vector2(7085, 2351)
+rotation = -1.95128
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D5"]
+position = Vector2(32, -8)
+shape = SubResource("RectangleShape2D_afo6e")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/StaticBody2D5"]
+position = Vector2(-0.120117, 1.14746)
+rotation = 1.5708
+scale = Vector2(2.06, 1.69482)
+texture = ExtResource("6_ef5h3")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Node2D" groups=["Podloga"]]
+position = Vector2(6673, 3801)
+rotation = -1.5708
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D3" groups=["Podloga"]]
+position = Vector2(0.884766, 7.22803)
+shape = SubResource("RectangleShape2D_h07g2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/StaticBody2D3" groups=["Podloga"]]
+position = Vector2(-0.613281, 5.72754)
+scale = Vector2(-0.114495, -0.267285)
+texture = ExtResource("8_j1xq7")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="Node2D" groups=["Podloga"]]
+position = Vector2(5422, 3801)
+rotation = -1.5708
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D6" groups=["Podloga"]]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_h07g2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/StaticBody2D6" groups=["Podloga"]]
+position = Vector2(-0.380859, -2.86523)
+scale = Vector2(-0.114495, -0.267285)
+texture = ExtResource("8_j1xq7")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="Node2D" groups=["Podloga"]]
+position = Vector2(3714, 2940)
+rotation = 1.5708
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D7" groups=["Podloga"]]
+position = Vector2(54.8857, 0.227539)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_h07g2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/StaticBody2D7" groups=["Podloga"]]
+position = Vector2(51.1797, 2.27148)
+rotation = 1.5708
+scale = Vector2(-0.114495, -0.267285)
+texture = ExtResource("8_j1xq7")
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="Node2D" groups=["Podloga"]]
+position = Vector2(5422, 3801)
+rotation = -1.5708
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D8" groups=["Podloga"]]
+position = Vector2(-2.87158, -1271)
+shape = SubResource("RectangleShape2D_h07g2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/StaticBody2D8" groups=["Podloga"]]
+position = Vector2(-2.74219, -1264.93)
+scale = Vector2(-0.114495, -0.267285)
+texture = ExtResource("8_j1xq7")
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="Node2D"]
+position = Vector2(7886, 1536)
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D9"]
+position = Vector2(-4169.61, -389.398)
+shape = SubResource("RectangleShape2D_afo6e")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/StaticBody2D9"]
+position = Vector2(-4201.12, -382.949)
+rotation = 1.5708
+scale = Vector2(2.06, 1.69482)
+texture = ExtResource("6_ef5h3")
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="Node2D"]
+position = Vector2(7880, 2786)
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D10"]
+position = Vector2(-380.375, 550.5)
+shape = SubResource("RectangleShape2D_afo6e")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/StaticBody2D10"]
+position = Vector2(-410, 558)
+rotation = 1.5708
+scale = Vector2(2.06, 1.69482)
+texture = ExtResource("6_ef5h3")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -505.0
+offset_top = -5947.0
+offset_right = -250.0
+offset_bottom = -5817.0
+text = "Controls:
+
+Press Q or Esc to leave the game.
+
+Press Space to start the fall."
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 237.0
+offset_top = -6008.0
+offset_right = 790.0
+offset_bottom = -5618.0
+text = "Przeciągnij Sprężyne na bloczek
+
+
+
+Chcesz je połączyć w taki sposób,
+ aby jak najefektywniej przejść poziom
+
+
+
+
+
+
+
+Kliknij Spacje po połączeniu sprężynek,
+ żeby rozpocząć spadanie bloczka
+
+PS: Dla utrudnienia możesz próbować
+użycia mniejszej ilości sprężynek do przejścia mapy"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 1059.0
+offset_top = -6053.0
+offset_right = 1271.0
+offset_bottom = -6001.0
+text = "Przyłącz sprężyny,
+ zanim przejdziesz na mapę"
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(242, -5002)
+texture = ExtResource("1_vdc84")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." groups=["WIN"]]
+position = Vector2(6800, 4680)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2" groups=["WIN"]]
+position = Vector2(1470.63, 0)
+shape = SubResource("RectangleShape2D_v73jc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["WIN"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" groups=["WIN"]]
+position = Vector2(11208.5, 348)
+shape = SubResource("RectangleShape2D_vtcqu")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 120.0
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 7097.0
+offset_top = 2603.0
+offset_right = 7209.0
+offset_bottom = 2648.0
+text = "Wyleć prawą stroną mapy"
+
+[connection signal="pressed" from="powrót" to="." method="_on_powrót_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
+[connection signal="body_entered" from="Ksztalty" to="." method="_on_ksztalty_body_entered"]
+[connection signal="body_entered" from="Slime" to="." method="_on_slime_body_entered"]
+[connection signal="input_event" from="Slime" to="." method="_on_slime_input_event"]
+[connection signal="area_entered" from="Slime2" to="." method="_on_slime_area_entered"]
+[connection signal="body_entered" from="Slime2" to="." method="_on_slime_2_body_entered"]
+[connection signal="input_event" from="Slime2" to="." method="_on_slime_2_input_event"]
+[connection signal="area_entered" from="Slime3" to="." method="_on_slime_area_entered"]
+[connection signal="body_entered" from="Slime3" to="." method="_on_slime_3_body_entered"]
+[connection signal="input_event" from="Slime3" to="." method="_on_slime_3_input_event"]
